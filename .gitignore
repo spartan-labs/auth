@@ -1,0 +1,12 @@
+node_modules
+dist
+npm-debug.log
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/node-typescript-starter.iml
+.idea/typescript-compiler.xml
+.idea/watcherTasks.xml
+.idea/workspace.xml
+package-lock.json
