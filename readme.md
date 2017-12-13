@@ -1,4 +1,4 @@
-## Skeleton for Node.js applications written in TypeScript
+## NodeJS + TypeScript auth module
 
 ### Development
 
