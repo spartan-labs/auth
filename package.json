@@ -1,7 +1,11 @@
 {
-  "name": "Spartan Auth module",
+  "name": "Spartan-Auth-module",
   "version": "1.0.0",
-  "description": "",
+  "description": "Do the auth of all spartan's modules.",
+  "licenses": [
+    "MIT"
+  ],
+  "repository": "https://github.com/spartan-labs/auth.git",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
@@ -14,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "7.0.22",
+    "bcrypt-nodejs": "0.0.3",
     "express": "4.15.3",
     "nodemon": "1.11.0"
   },
@@ -27,7 +31,6 @@
     "eslint-plugin-promise": "3.5.0",
     "mocha": "3.4.2",
     "supertest": "3.0.0",
-    "tsc": "1.20150623.0",
     "typescript": "2.3.3",
     "typescript-eslint-parser": "3.0.0"
   }

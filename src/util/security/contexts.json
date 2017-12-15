@@ -1,0 +1,19 @@
+{
+  "contexts": [
+    {
+      "module": "spartan-shield",
+      "bd": {
+      }
+    },
+    {
+      "module": "spartan-spear",
+      "bd": {
+      }
+    },
+    {
+      "module": "spartan-armor",
+      "bd": {
+      }
+    }
+  ]
+}

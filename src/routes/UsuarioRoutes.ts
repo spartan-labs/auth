@@ -8,6 +8,9 @@ router.get('/', (req, res) => {
     return res.json(usuarioCtrl.retreaveAll());
 });
 
+router.get('/:context/login', (req, res) => {
+    return res.json(usuarioCtrl.retreaveAll());
+});
 
 router.get('/welcome', (req, res) => {
     return res.json({message: "bem-vindo"});
