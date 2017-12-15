@@ -1,6 +1,14 @@
 import * as fs from 'fs';
 import * as bcrypt from 'bcrypt-nodejs';
 
+/*
+ * Utilização da classe:
+ * 1. Precisa instanciá-la, com a hash vinda da requisição para a verificação.
+ * 2. Após a instancia, é preciso chamar o método verificar(), que retornara true se a
+ *    hash anteoriormente passada for válida e false se não for.
+ *
+ * OBS: Para pegar o contexto da aplicação, utilizar o contexto.
+*/
 class BCrypt {
     private contextHash: String;
     private _contexto: String;
