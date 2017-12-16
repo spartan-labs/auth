@@ -1,4 +1,5 @@
 import * as express from 'express'
+import * as bodyParser from 'body-parser';
 import {UsuarioRoutes} from "./routes/UsuarioRoutes";
 
 
@@ -12,9 +13,8 @@ class App {
 
     private mountRoutes(): void {
         const router = UsuarioRoutes();
-
-        this.express.use('/usuario', router);
+        this.express.use(bodyParser.json())
+        this.express.use('/', router);
     }
 }
-
 export default new App().express

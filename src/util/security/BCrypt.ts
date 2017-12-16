@@ -9,22 +9,22 @@ import * as bcrypt from 'bcrypt-nodejs';
  *
  * OBS: Para pegar o contexto da aplicação, utilizar o contexto.
 */
-class BCrypt {
-    private contextHash: String;
-    private _contexto: String;
+export default class BCrypt {
+    private _contextHash: String;
+    private _contexto: any;
 
     /*
     * O modulo manda a requisição com a hash de contexto encriptada
     */
-    constructor(contextHash: String) {
-        this.contextHash = contextHash;
+    constructor(contextHash: String = "") {
+        this._contextHash = contextHash;
     }
 
     /*
    * O módulo auth lê os contextos cadastrados no arquivo contexts.json
    */
     private lerContextos() {
-        return JSON.parse(fs.readFileSync('./contexts.json', 'utf8'))
+        return JSON.parse(fs.readFileSync('./src/util/security/contexts.json', 'utf8'))
     }
 
     /*
@@ -34,7 +34,7 @@ class BCrypt {
         let contextos = this.lerContextos().contexts;
 
         for (let i = 0; i < contextos.length; i++) {
-            if (bcrypt.compareSync(contextos[i].module, this.contextHash) == true) {
+            if (bcrypt.compareSync(contextos[i].name, this._contextHash) == true) {
                 this._contexto = contextos[i];
                 return true
             }
@@ -42,10 +42,14 @@ class BCrypt {
         return false;
     }
 
+    public construir(texto:String) {
+        return bcrypt.hashSync(texto)
+    }
+
     /*
        * Se precisar pegar o contexto depois, (para fazer o arquivo de configuração do banco, etc.)
        */
-    get contexto(): String {
+    get contexto(): any {
         return this._contexto;
     }
 }

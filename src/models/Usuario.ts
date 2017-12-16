@@ -1,21 +1,11 @@
-export default class Usuario {
-    private _nome:String;
-    private _email:String;
-    private _senha:String;
+export default class Usuario extends Pessoa {
 
+    private _email: String;
+    private _senha: String;
 
-    constructor(usuario) {
-        this._nome = usuario.nome;
-        this._email = usuario.email;
-        this._senha = usuario.senha;
-    }
-
-    get nome(): String {
-        return this._nome;
-    }
-
-    set nome(value: String) {
-        this._nome = value;
+    constructor(_nome: String, _cpf: String, _nascimento: String, _endereco: Endereco, _email: String, _senha: String) {
+        super();
+        Object.assign(this, _nome, _cpf, _nascimento, _endereco, _email, _senha)
     }
 
     get email(): String {
