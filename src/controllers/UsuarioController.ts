@@ -1,16 +1,13 @@
-import UsuarioDAO from "../service/UsuarioDAO";
+import BCrypt from "../util/security/BCrypt";
+import {UsuarioService} from '../service/UsuarioService';
 
 export default class UsuarioController {
 
-    index() {
-
+    login = function (req, res) {
+        return res.json(new UsuarioService(req.params.context).validar())
     }
 
-    get() {
-
-    }
-
-    retreaveAll() {
-        return UsuarioDAO.retreaveAll()
+    faz = function (req, res) {
+        return res.json(new BCrypt().construir(req.params.context))
     }
 }

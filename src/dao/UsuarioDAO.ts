@@ -1,4 +1,4 @@
-import Usuario from "../models/Usuario";
+import * as rethink from 'rethinkdb'
 
 export default class UsuarioDAO {
 

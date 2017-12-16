@@ -3,6 +3,10 @@
     {
       "name": "shield",
       "bd": {
+        "host": "localhost",
+        "port": 8080,
+        "authKey": "",
+        "db": "rethinkdb_ex"
       }
     },
     {

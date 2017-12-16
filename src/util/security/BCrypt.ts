@@ -34,10 +34,15 @@ export default class BCrypt {
         let contextos = this.lerContextos().contexts;
 
         for (let i = 0; i < contextos.length; i++) {
-            if (bcrypt.compareSync(contextos[i].name, this._contextHash) == true) {
-                this._contexto = contextos[i];
-                return true
+            try{
+                if (bcrypt.compareSync(contextos[i].name, this._contextHash) == true) {
+                    this._contexto = contextos[i];
+                    return true
+                }
+            }catch (e){
+                return false;
             }
+
         }
         return false;
     }

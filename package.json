@@ -2,9 +2,6 @@
   "name": "Spartan-Auth-module",
   "version": "1.0.0",
   "description": "Do the auth of all spartan's modules.",
-  "licenses": [
-    "MIT"
-  ],
   "repository": "https://github.com/spartan-labs/auth.git",
   "main": "index.js",
   "scripts": {
@@ -21,15 +18,17 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "express": "4.15.3",
-    "nodemon": "1.11.0"
+    "nodemon": "1.11.0",
+    "rethinkdb": "^2.3.3"
   },
   "devDependencies": {
     "@types/mocha": "2.2.41",
     "@types/node": "7.0.22",
-    "eslint": "4.0.0",
-    "eslint-config-airbnb-base": "11.2.0",
-    "eslint-plugin-import": "2.3.0",
-    "eslint-plugin-promise": "3.5.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-promise": "^3.5.0",
     "mocha": "3.4.2",
     "supertest": "3.0.0",
     "typescript": "2.3.3",
