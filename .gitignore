@@ -9,4 +9,5 @@ npm-debug.log
 .idea/typescript-compiler.xml
 .idea/watcherTasks.xml
 .idea/workspace.xml
+.idea/vcs.xml
 package-lock.json
