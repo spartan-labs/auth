@@ -47,3 +47,5 @@
     arrow-parens:
       - 2
       - always
+    properties:
+      - camelcase: false

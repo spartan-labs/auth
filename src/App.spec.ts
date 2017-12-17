@@ -4,8 +4,7 @@ import app from './App'
 describe('App', () => {
   it('works', () =>
     supertest(app)
-      .get('/')
-      .expect('Content-Type', /json/)
+      .post('/shield/login')
       .expect(200)
   )
-})
+});

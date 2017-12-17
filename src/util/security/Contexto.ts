@@ -8,11 +8,9 @@ export class Contexto {
 
         if (bcrypt.verificar()) {
             if (bcrypt.contexto.name == req.params.context) {
-                // let usuarioCtrl = new UsuarioController(bcrypt.contexto);
-                // usuarioCtrl.login();
-               return next();
+                return next();
             }
         }
-       return res.json({mensagem: "nao autorizado, fora do contexto"})
+        return res.status.unauthenticated("Não autorizado, fora do contexto");
     }
 }
