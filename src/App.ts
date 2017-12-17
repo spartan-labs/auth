@@ -15,7 +15,7 @@ class App {
     private mountRoutes(): void {
         this.express.use(bodyParser.urlencoded({extended: true}));
         this.express.use(bodyParser.json());
-        this.express.use('/:context/',Contexto.verificar);
+        this.express.use('/:context/', Contexto.verificar);
         // for (let i = 0; i < Routes().length; i++) {
         //     this.express('/', Routes()[i]);
         // }

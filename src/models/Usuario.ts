@@ -1,11 +1,15 @@
-export default class Usuario extends Pessoa {
+import {validate, Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max} from "class-validator";
 
+export default class Usuario {
+
+    @IsEmail()
     private _email: String;
+
     private _senha: String;
 
-    constructor(_nome: String, _cpf: String, _nascimento: String, _endereco: Endereco, _email: String, _senha: String) {
-        super();
-        Object.assign(this, _nome, _cpf, _nascimento, _endereco, _email, _senha)
+    constructor(Usuario) {
+        this._senha = Usuario.senha;
+        this.email = Usuario.email;
     }
 
     get email(): String {

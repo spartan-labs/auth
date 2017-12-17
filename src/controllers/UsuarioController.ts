@@ -4,7 +4,7 @@ import {UsuarioService} from '../service/UsuarioService';
 export default class UsuarioController {
 
     login = function (req, res) {
-        return res.json(new UsuarioService(req.params.context).validar())
+        return res.json(new UsuarioService(req.params.context).validar(req.body))
     }
 
     faz = function (req, res) {
