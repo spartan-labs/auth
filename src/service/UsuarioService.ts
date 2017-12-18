@@ -10,15 +10,20 @@ export class UsuarioService {
         this._context = context;
     }
 
-    validar(value: Object) {
+   validar(value: Object) {
         let pessoa = new Usuario(value);
         validate(pessoa).then(errors => {
             if (errors.length > 0) {
-                console.log("validation failed. errors: ", errors);
-            } else {
-                console.log("validation succeed");
+                let mensagem = [];
+                errors.forEach(function (a) {
+                    for (let inc in a.constraints) {
+                        mensagem.push(a.constraints[inc])
+                    }
+                });
+                console.log({msg:mensagem});
+                return {msg: mensagem}
             }
+            return {msg: "validou"}
         })
-        return {msg: "validou"}
     }
 }

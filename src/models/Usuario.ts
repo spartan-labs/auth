@@ -1,10 +1,21 @@
-import {validate, Contains, IsInt, Length, IsEmail, IsFQDN, IsDate, Min, Max} from "class-validator";
+import {
+    IsEmail,MaxLength,
+    MinLength
+} from "class-validator";
 
 export default class Usuario {
-
-    @IsEmail()
+    @MaxLength(100, {
+        message: "Email grande. O tamanho maximo é $constraint1 caracteres."
+    })
+    @IsEmail({}, {message: "Email em formato incorreto"})
     private _email: String;
 
+    @MinLength(6, {
+        message: "Senha curta. O tamanho minimo é $constraint1 caracteres."
+    })
+    @MaxLength(40, {
+        message: "Senha grande. O tamanho maximo é $constraint1 caracteres."
+    })
     private _senha: String;
 
     constructor(Usuario) {
