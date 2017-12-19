@@ -11,16 +11,18 @@ export class UsuarioService {
 
     validar(value: Object, callback) {
         let pessoa = new Usuario(value);
-        let mensagem: any = [];
-        return validate(pessoa).then(errors => {
+        let mensagem:any = [];
+        let tipo = "success";
+      return validate(pessoa).then(errors => {
             if (errors.length > 0) {
                 errors.forEach(function (a) {
                     for (let inc in a.constraints) {
                         mensagem.push(a.constraints[inc])
                     }
                 });
+               tipo = "error"
             }
-            callback({msg: mensagem})
+          callback({type: tipo, msg: mensagem})
         });
 
     }
