@@ -21,11 +21,14 @@
     "express": "4.15.3",
     "json-status": "^0.5.4",
     "nodemon": "1.11.0",
-    "rethinkdb": "^2.3.3"
+    "reflect-metadata": "^0.1.10",
+    "rethinkdb": "^2.3.3",
+    "thinky": "^2.3.9",
+    "typeorm": "^0.1.11"
   },
   "devDependencies": {
     "@types/mocha": "2.2.41",
-    "@types/node": "7.0.22",
+    "@types/node": "^7.0.22",
     "eslint": "^4.13.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^11.3.2",

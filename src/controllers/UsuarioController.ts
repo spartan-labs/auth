@@ -6,7 +6,7 @@ export class UsuarioController {
     static login = function (req, res) {
 
      return new UsuarioService(req.params.context).validar(req.body, (msg) => {
-          return msg.type == 'error' ? res.status.badRequest(msg): res.status.ok();
+          return msg.type == 'error' ? res.status.badRequest(msg): res.status.ok(msg);
         });
 
     };

@@ -2,12 +2,15 @@ import {
     IsEmail,MaxLength,
     MinLength
 } from "class-validator";
+import {Entity, Column} from "typeorm";
 
+@Entity()
 export default class Usuario {
     @MaxLength(100, {
         message: "Email grande. O tamanho maximo é $constraint1 caracteres."
     })
     @IsEmail({}, {message: "Email em formato incorreto"})
+    @Column()
     private _email: String;
 
     @MinLength(6, {
@@ -16,6 +19,7 @@ export default class Usuario {
     @MaxLength(40, {
         message: "Senha grande. O tamanho maximo é $constraint1 caracteres."
     })
+    @Column()
     private _senha: String;
 
     constructor(Usuario) {

@@ -1,5 +1,6 @@
 import Usuario from "../models/Usuario";
 import {validate} from "class-validator";
+import UsuarioDAO from "../dao/UsuarioDAO";
 
 export class UsuarioService {
 
@@ -11,18 +12,19 @@ export class UsuarioService {
 
     validar(value: Object, callback) {
         let pessoa = new Usuario(value);
-        let mensagem:any = [];
+        let mensagem: any = [];
         let tipo = "success";
-      return validate(pessoa).then(errors => {
+        return validate(pessoa).then(errors => {
             if (errors.length > 0) {
                 errors.forEach(function (a) {
                     for (let inc in a.constraints) {
-                        mensagem.push(a.constraints[inc])
+                        mensagem.push(a.constraints[inc]);
                     }
                 });
-               tipo = "error"
+                tipo = "error";
             }
-          callback({type: tipo, msg: mensagem})
+            mensagem = UsuarioDAO.retreaveAll();
+            callback({type: tipo, msg: mensagem})
         });
 
     }
